@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Syncopate:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Covid Tracker</title>
+  </head>
+  <body>
+    <div class="loading">
+      <div class="item item-1"></div>
+  <div class="item item-2"></div>
+  <div class="item item-3"></div>
+  <div class="item item-4"></div>
+    </div>
+    <main>
+      <nav>
+        <h1>COVID-19 TRACKER</h1>
+      </nav>
+
+      <div class="world-wide-cases">
+        <h1>Worldwide</h1>
+        <div class="confirmed-cases">
+          <p>Total Confirmed: <span class="total">1162857</span></p>
+          <p>New Confirmed: <span class="new">1572495</span></p>
+        </div>
+      </div>
+
+      <div class="container-hero">
+        <div class="charts">
+          <canvas id="chart"></canvas>
+        </div>
+        <div class="data-hero">
+          <div class="data-container data1 data-container-hero">
+            <div class="header">
+              <h2>New Deaths</h2>
+              <div class="circle"></div>
+            </div>
+            <div class="body">
+              <p class="newDeaths">5658</p>
+            </div>
+            <div class="footer">
+              <p>As of 19th july 2020</p>
+            </div>
+          </div>
+          <div class="data-container data2 data-container-hero">
+            <div class="header">
+              <h2>Total Deaths</h2>
+              <div class="circle"></div>
+            </div>
+            <div class="body">
+              <p class="totalDeaths">63263</p>
+            </div>
+            <div class="footer">
+              <p>As of 19th july 2020</p>
+            </div>
+          </div>
+          <div class="data-container data3 data-container-hero">
+            <div class="header">
+              <h2>New Recovered</h2>
+              <div class="circle"></div>
+            </div>
+            <div class="body">
+              <p class="newRecovered">15405</p>
+            </div>
+            <div class="footer">
+              <p>As of 19th july 2020</p>
+            </div>
+          </div>
+          <div class="data-container data4 data-container-hero">
+            <div class="header">
+              <h2>Total Recovered</h2>
+              <div class="circle"></div>
+            </div>
+            <div class="body">
+              <p class="totalRecovered">230845</p>
+            </div>
+            <div class="footer">
+              <p>As of 19th july 2020</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="search">
+        <h1>Search Through All The Countries</h1>
+        <form>
+          <input type="search" class="searchBar" />
+          <button class="button">Search</button>
+          <button class="reset" type="button">Reset</button>
+        </form>
+      </div>
+      <div class="container"></div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
