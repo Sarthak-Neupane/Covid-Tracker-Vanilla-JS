@@ -42,12 +42,12 @@ window.addEventListener("load", async () => {
     ]);
     const dataPromises = results.map((result) => result.json());
     const finalData = await Promise.all(dataPromises);
-    console.log(finalData);
+    // console.log(finalData);
 
     const sorted = finalData[0].sort(sortByDate);
     sorted.forEach((element) => {
       dataLabels.push(element.TotalDeaths);
-      labels.push(moment(element.Date).format("MMM Do YY"));
+      labels.push(dayjs(element.Date).format("MMM DD YY"));
     });
 
     global = { ...finalData[1].Global };
@@ -101,7 +101,7 @@ const chartFunction = () => {
 
 const replacingData = () => {
   // console.log(global);
-  const date = moment(global.Date).format("MMMM Do YYYY, h:mm:ss a");
+  const date = dayjs(global.Date).format("MMMM DD YYYY, h:mm:ss a");
   FooterDate.forEach((el) => {
     el.innerHTML = `As of ${date}`;
   });
@@ -114,9 +114,9 @@ const replacingData = () => {
 };
 
 const gettingCountriesData = () => {
-  console.log(summary);
+  // console.log(summary);
   summary.forEach((el) => {
-    const date = moment(el.Date).format("MMMM Do YYYY, h:mm:ss a");
+    const date = dayjs(el.Date).format("MMMM DD YYYY, h:mm:ss a");
     const card = `
       <div class="data-container ${el.CountryCode}">
           <div class="header">
@@ -146,7 +146,7 @@ const gettingCountriesData = () => {
 
 button.addEventListener('click', (e)=>{
   e.preventDefault()
-  console.log(searchBar.value)
+  // console.log(searchBar.value)
   if(searchBar.value === ""){
     return
   }
@@ -198,14 +198,4 @@ const gsapStart = ()=>{
     y: 10,
     duration: 1,
   }, '-=1')
-
-
-    //   gsap.from(``, {
-    //   y: 100,
-    //   duration: 2,
-    //   scrollTrigger: {
-    //     trigger: `.container-${el.CountryCode}`,
-    //     start: "top bottom",
-    //   }
-    // })
 }
