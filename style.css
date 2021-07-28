@@ -467,6 +467,10 @@ nav h1 {
   font-size: 1.6rem;
 }
 
+.search h1 {
+  padding: 1.5rem;
+}
+
 .search form {
   margin: 2rem 0;
   display: -webkit-box;

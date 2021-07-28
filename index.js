@@ -62,6 +62,7 @@ let dataLabels = [];
 let labels = [];
 
 window.addEventListener("load", async () => {
+  
   gsap.registerPlugin(ScrollTrigger);
   try {
     const results = await Promise.all([
