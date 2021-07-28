@@ -12,6 +12,8 @@
       rel="stylesheet"
     />
 
+    <link rel="manifest" href="manifest.json">
+
     <title>Covid Tracker</title>
   </head>
   <body>
@@ -24,6 +26,7 @@
     <main>
       <nav>
         <h1>COVID-19 TRACKER</h1>
+        <button class="add-button">Install the app</button>
       </nav>
 
       <div class="world-wide-cases">
@@ -100,10 +103,16 @@
       <div class="container"></div>
     </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      if('serviceWorker' in navigator){
+        navigator.serviceWorker.register('./service-worker.js')
+      }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <script src="index.js"></script>
   </body>
 </html>
