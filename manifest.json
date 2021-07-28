@@ -1,7 +1,7 @@
 {
     "name": "Covid",
     "short_name": "Covid",
-    "start_url": "Covid-Tracker-Vanilla-JS/",
+    "start_url": "/",
     "icons": [
         {
             "src": "icons/manifest-icon-192.png",
