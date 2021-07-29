@@ -150,7 +150,13 @@ const gettingCountriesData = () => {
       <div class="data-container ${el.CountryCode}">
           <div class="header">
             <h2>${el.Country}</h2>
-           
+            <div class="circle">
+            <img
+            src="https://flagcdn.com/w80/${el.CountryCode.toLowerCase()}.png"
+            srcset="https://flagcdn.com/w80/${el.CountryCode.toLowerCase()}.png 2x"
+            width="80"
+            alt="${el.Country}">
+            </div>
           </div>
           <div class="body">
             <p class="TotalConfirmed">Total Confirmed: ${el.TotalConfirmed}</p>
