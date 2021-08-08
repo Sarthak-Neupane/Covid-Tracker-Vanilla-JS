@@ -1,21 +1,15 @@
 let deferredPrompt;
 const addBtn = document.querySelector('.add-button');
-addBtn.style.display = 'none';
+// addBtn.style.bottom = '0';
 
 window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent Chrome 67 and earlier from automatically showing the prompt
   e.preventDefault();
-  // Stash the event so it can be triggered later.
   deferredPrompt = e;
-  // Update UI to notify the user they can add to home screen
-  addBtn.style.display = 'block';
+  addBtn.style.bottom = '0';
 
   addBtn.addEventListener('click', (e) => {
-    // hide our user interface that shows our A2HS button
-    addBtn.style.display = 'none';
-    // Show the prompt
+    addBtn.style.bottom = '-100%';
     deferredPrompt.prompt();
-    // Wait for the user to respond to the prompt
     deferredPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === 'accepted') {
           console.log('User accepted the A2HS prompt');
@@ -45,6 +39,7 @@ const searchBar = document.querySelector('.searchBar')
 const button = document.querySelector('.button')
 const reset = document.querySelector('.reset')
 
+
 const FooterDate = [...document.querySelectorAll(".footer > p")];
 const BaseUrl = "https://api.covid19api.com/";
 const url1 = `${BaseUrl}world`;
@@ -62,7 +57,7 @@ let dataLabels = [];
 let labels = [];
 
 window.addEventListener("load", async () => {
-  
+
   gsap.registerPlugin(ScrollTrigger);
   try {
     const results = await Promise.all([
@@ -227,4 +222,10 @@ const gsapStart = ()=>{
     y: 10,
     duration: 1,
   }, '-=1')
+  
+  t1.from('.add-button', {
+    y: 30,
+    opacity: 0,
+    duration: 2
+  })
 }
