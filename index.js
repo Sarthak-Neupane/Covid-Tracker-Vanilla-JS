@@ -1,6 +1,6 @@
 let deferredPrompt;
 const addBtn = document.querySelector('.add-button');
-// addBtn.style.bottom = '0';
+addBtn.style.bottom = '-100%';
 
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
